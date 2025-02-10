@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+input,
+button {
+  transition: all 0.4s;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+table,
+th,
+td {
+  border: 1px solid black;
+}
+th,
+td {
+  padding: 8px;
+  text-align: left;
+}
+th {
+  background-color: #aaa8a8;
+}
+@layer components {
+  input {
+    @apply outline-none border-b border-gray-500 pe-6 lowercase hover:border-white focus:border-white bg-transparent text-white placeholder:capitalize w-full;
+  }
+  form {
+    @apply flex flex-col gap-10 w-full;
+  }
+  .main-btn {
+    @apply cursor-pointer text-center bg-dark text-white font-semibold sm:!text-sm text-xs tracking-widest hover:bg-white hover:text-dark w-fit flex items-center self-center px-4 py-2 m-auto;
+  }
+  .title {
+    @apply text-3xl text-white text-center mb-10;
+  }
+  .container {
+    @apply flex flex-col items-center w-full absolute top-1/2 -translate-y-1/2 bg-[#23272e] transition-all duration-500;
+  }
+  .link {
+    @apply text-white underline hover:text-dark mt-2;
+  }
+  .password-input-wrapper {
+    @apply relative flex;
+  }
+  .toggle-password {
+    @apply absolute -top-1 right-0 bg-[#23272e] text-dark cursor-pointer z-50;
+  }
+  .validate {
+    @apply text-red-600;
+  }
+  #user-page {
+    @apply absolute h-dvh w-full bg-[#13161b] right-0 top-0 flex gap-20 items-center justify-center;
+  }
+  #toast {
+    @apply absolute top-0 left-1/2 bg-gray-600 p-4 -translate-y-full -translate-x-1/2 rounded-md transition-all duration-500;
+  }
+}
